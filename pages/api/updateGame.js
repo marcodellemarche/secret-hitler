@@ -1,19 +1,13 @@
-import { updateSnippet } from '../../utils/Fauna';
+import { updateGame } from '../../utils/Fauna';
 export default async function handler(req, res) {
     if (req.method !== 'PUT') {
         return res.status(405).json({ msg: 'Method not allowed' });
     }
 
-    const { id, code, language, description, name } = req.body;
+    const gameState = req.body;
 
     try {
-        const updated = await updateSnippet(
-            id,
-            code,
-            language,
-            name,
-            description
-        );
+        const updated = await updateGame(gameState);
         return res.status(200).json(updated);
     } catch (err) {
         console.error(err);

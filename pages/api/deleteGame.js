@@ -1,4 +1,4 @@
-import { deleteSnippet } from '../../utils/Fauna';
+import { deleteGame } from '../../utils/Fauna';
 export default async function handler(req, res) {
     if (req.method !== 'DELETE') {
         return res.status(405).json({ msg: 'Method not allowed' });
@@ -9,7 +9,7 @@ export default async function handler(req, res) {
     const { id } = req.body;
     console.log(id);
     try {
-        const deleted = await deleteSnippet(id);
+        const deleted = await deleteGame(id);
         return res.status(200).json(deleted);
     } catch (err) {
         console.error(err);

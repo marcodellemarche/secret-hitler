@@ -8,7 +8,7 @@ Source code for the [Next.js](https://nextjs.org/) crash course project that use
 
 2. Copy the `.env.local.example` file to `.env.local` and fill in your `FAUNA_SECRET`.
 
-3. Create a collection in Fauna called `snippets`.
+3. Create a collection in Fauna called `games`.
 
 4. Run the development server:
 
